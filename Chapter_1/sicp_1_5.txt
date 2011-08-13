@@ -1,0 +1,14 @@
+What behavior is observed with the following code in an interpreter that uses applicative-order evaluation ?
+
+(define (p) (p))
+
+(define (test x y)
+	(if (= x 0) 0 y)
+
+
+(test 0 (p))
+
+
+~~~
+
+The interpreter will run in an infinite loop as it attempts to substitute (p) with (p) as it is evaluated. This happens because the method (p) defines itself recursively. An interpreter using applicative-order evaluation will defer applying parameters, and instead expand the method definition fully with "primitive" types. In the case of (p), this results in an infinite loop. "Turtles all the way down."

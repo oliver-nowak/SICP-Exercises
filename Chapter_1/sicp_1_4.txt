@@ -1,0 +1,11 @@
+Describe the behavior of the following procedure:
+
+(define (a-plus-abs-b a b)
+	((if (> b 0) + -) a b))
+
+
+~~~~
+
+This method will determine the absolute value of <b> by applying a sign operator on <b> and then adding the value of <a> to <b>. The method determines which sign operator to apply by evaluating if the value of <b> is greater than zero.
+
+
